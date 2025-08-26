@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaféconC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="bg-[#435233] shadow-md fixed w-full h-20 top-0 left-0">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+        
+        <!-- Logo -->
+        <div class="w-9">
+          <img src="./img/logo-cafeconc.png" alt="">
+        </div>
+
+        <!-- Links normales (PC) -->
+        <div class="hidden md:flex space-x-6">
+          <a href="#" class="text-[#fdfce8] hover:text-indigo-600">Inicio</a>
+          <a href="#" class="text-[#fdfce8] hover:text-indigo-600">Menú</a>
+          <a href="#" class="text-[#fdfce8] hover:text-indigo-600">Nosotros</a>
+          <a href="#" class="text-[#fdfce8] hover:text-indigo-600">Contacto</a>
+        </div>
+
+        <!-- Botón menú (celular) -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-[#fdfce8] focus:outline-none">
+            <!-- Icono hamburguesa -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menú desplegable móvil -->
+    <div id="menu" class="hidden md:hidden bg-white px-4 pb-4 space-y-2">
+      <a href="#" class="block text-gray-700 hover:text-indigo-600">Inicio</a>
+      <a href="#" class="block text-gray-700 hover:text-indigo-600">Menú</a>
+      <a href="#" class="block text-gray-700 hover:text-indigo-600">Nosotros</a>
+      <a href="#" class="block text-gray-700 hover:text-indigo-600">Contacto</a>
+    </div>
+  </nav>
+  <script>
+    // Script para abrir/cerrar menú en móvil
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  </script>
+
+    <div class="pt-20 h-screen">
+        <div class="bg-[#435233] h-1/2 pl-10 flex items-end ">
+            <h1 class="text-[#fdfce8] text-[#fdfce8] bottom-0  font-bold text-8xl"> C de Café</h1>
+        </div>
+        <div class=" bg-[#fdfce8] h-32 pl-10 ">
+            <p class="text-[#435233 top-0 text-5xl font-bold text-[#435233]">C porque vivimos...<br>En el C de Conce.</p>
+        </div>
+        <div class="flex justify-center">
+            <button class="bg-yellow-500 text-white py-2 px-4">Carta</button>
+        </div style="height: 100px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 30%; width: 100%; transform: scaleX(-1);"><path d="M-0.18,1.51 C257.15,152.83 257.71,152.83 502.07,3.50 L500.00,150.33 L-0.00,150.33 Z" style="stroke: none; fill: #435233;"></path></svg>
+    </div>
+
+</body>
+</html>

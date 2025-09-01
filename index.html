@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="style.css">
     <title>CaféconC</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
 </head>
 <body class="bg-[#fdfce8]">
     <nav class="bg-[#435233] shadow-md fixed w-full h-20 top-0 left-0">
@@ -87,6 +90,7 @@
     </div>
     </div>
 
+    <!--Carta-->
 <div class="relative w-full py-16 overflow-hidden rounded-2xl">
     <div class="relative w-full h-[400px] bg-[#435233] rounded-2xl overflow-hidden shadow-lg">
   <!-- Imágenes detrás -->
@@ -136,9 +140,9 @@
 </div>
 
 <!--Spotify-->
-<div class="bg-black">
-<div class="py-20" id="wrapper">
-  <svg xmlns="http://www.w3.org/2000/svg" width="559" height="168" viewBox="0 0 559 168" id="spotify--logo">
+<div class="spotify w-full h-screen flex flex-col items-center pt-7 pb-7 md:flex md:justify-start bg-[url('img/background/ladrillos.jpg')] bg-cover bg-center bg-black/65 bg-blend-multiply">
+<div class=" pt-9" id="wrapper">
+  <svg xmlns="http://www.w3.org/2000/svg" width="579" height="168" viewBox="0 0 559 168" id="spotify--logo">
     <g id="logo--circle">
       <path id="logo--circle_1_" d="M84,0.3L84,0.3C37.7,0.3,0.3,37.8,0.3,84c0,46.3,37.5,83.7,83.7,83.7
         c46.3,0,83.7-37.5,83.7-83.7C167.7,37.8,130.2,0.3,84,0.3z"/>
@@ -187,15 +191,72 @@
       </g>
     </g>
   </svg>
-  <div class="flex flex-col items-center bg-white w-60 h-72">
-    <div>
-      <img class="h-auto w-44" src="./img/foto_spotify.png" alt="">
+  </div>
+  <div class="flex flex-col items-center justify-center w-11/12 h-auto max-w-4xl p-6 bg-white rounded-lg shadow-lg md:flex-row md:h-4/6">
+    <div class="px-5">
+      <img class="w-48 h-auto rounded-xl" src="./img/img-spotify.jpg" alt="">
     </div>
-    
-  <p>hola</p>
+
+    <div  class="flex flex-col px-5">
+    <div>
+      <h3 class="font-bold text-center">¡Acompañanos con la vibe al lugar que vayas!</h3>
+    </div>
+    <div class="inset-0 flex items-center justify-center pt-6 ">
+    <button class="px-8 py-3 font-bold text-black transition transform bg-yellow-500 rounded-full shadow-lg hover:bg-yellow-400 hover:scale-105">
+      Nuestra Playlist
+    </button>
+    </div>
+    </div>
 </div>
 </div>
+
+<!--instagram-->
+<div class="w-full h-[100vh] max-w-xl swiper">
+  <div class="flex items-center px-8 pt-8 pb-8">
+  <h2 class="text-4xl font-bold ">Siguenos en Instagram!</h2>
+  <img class="w-auto h-20 pl-8" src="./img/logo-cafeconc.png" alt="">
+  </div>
+  <div class="swiper-wrapper">
+    <div class="flex items-center justify-center h-4/6 bg-[url('img/instagram/1.jpg')] bg-cover  bg-center  swiper-slide text-gray-400">@cafeconc</div>
+    <div class="flex items-center justify-center h-4/6 bg-[url('img/instagram/2.jpg')] bg-cover  bg-center  swiper-slide text-gray-400">@cafeconc</div>
+    <div class="flex items-center justify-center h-4/6  bg-[url('img/instagram/3.jpg')] bg-cover bg-center  swiper-slide text-gray-400">@cafeconc</div>
+  </div>
+
+  <!-- Controles -->
+  <div class="swiper-button-prev !text-[#000]"></div>
+  <div class="swiper-button-next !text-[#000]"></div>
+  <div class="swiper-pagination "></div>
+  <style>
+    .swiper-pagination-bullet {
+    background: #d1d5db; /* gris Tailwind 300 */
+    opacity: 0.6;
+  }
+  .swiper-pagination-bullet-active {
+    background: #435233; /* amarillo Tailwind 500 */
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  </style>
 </div>
+
+<!--Auto play carrusel-->
+<script>
+  new Swiper(".swiper", {
+    loop: true, // vuelve al inicio
+    autoplay: {
+      delay: 3000, // tiempo entre slides (3s)
+      disableOnInteraction: false, // sigue aunque el usuario interactúe
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
 
 </body>
 </html>

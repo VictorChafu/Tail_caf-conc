@@ -22,10 +22,10 @@
 
         <!-- Links normales (PC) -->
         <div class="hidden space-x-6 md:flex">
-          <a href="#" class="text-[#fdfce8] hover:text-indigo-600">Inicio</a>
-          <a href="#" class="text-[#fdfce8] hover:text-indigo-600">Menú</a>
-          <a href="#" class="text-[#fdfce8] hover:text-indigo-600">Nosotros</a>
-          <a href="#" class="text-[#fdfce8] hover:text-indigo-600">Contacto</a>
+          <a href="#" class="text-[#fdfce8] hover: hover:text-yellow-400">Inicio</a>
+          <a href="#" class="text-[#fdfce8] hover: hover:text-yellow-400">Menú</a>
+          <a href="#ubicación" class="text-[#fdfce8] hover: hover:text-yellow-400">Ubicación</a>
+          <a href="#contacto" class="text-[#fdfce8] hover: hover:text-yellow-400">Contacto</a>
         </div>
 
         <!-- Botón menú (celular) -->
@@ -43,29 +43,37 @@
 
     <!-- Menú desplegable móvil -->
     <div id="menu" class="hidden px-4 pb-4 space-y-2 bg-white md:hidden">
-      <a href="#" class="block text-gray-700 hover:text-indigo-600">Inicio</a>
-      <a href="#" class="block text-gray-700 hover:text-indigo-600">Menú</a>
-      <a href="#" class="block text-gray-700 hover:text-indigo-600">Nosotros</a>
-      <a href="#" class="block text-gray-700 hover:text-indigo-600">Contacto</a>
+      <a href="#" class="block text-gray-700 hover: hover:text-yellow-400">Inicio</a>
+      <a href="#" class="block text-gray-700 hover: hover:text-yellow-400">Menú</a>
+      <a href="#ubicación" class="block text-gray-700 hover: hover:text-yellow-400">Ubicación</a>
+      <a href="#contacto" class="block text-gray-700 hover: hover:text-yellow-400">Contacto</a>
     </div>
   </nav>
   <script>
-    // Script para abrir/cerrar menú en móvil
-    const btn = document.getElementById("menu-btn");
-    const menu = document.getElementById("menu");
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
 
-    btn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
+  // abrir/cerrar menú con el botón
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+
+  // cerrar menú al hacer clic en cualquier link
+  const links = menu.querySelectorAll("a");
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.add("hidden"); // fuerza a cerrarlo
     });
-  </script>
+  });
+</script>
 
     <div class="bg-[#fdfce8]  pt-20">
         <div class="bg-[#435233] pl-10 pt-32 flex items-end h-2/4">
-            <h1 class="text-[#fdfce8] text-[#fdfce8] bottom-0  font-bold text-8xl"> C de Café</h1>
+            <h1 class="text-[#fdfce8] bottom-0  font-bold text-8xl"> C de Café</h1>
         </div>
         <div class=" bg-[#fdfce8]  pl-10 ">
             <p class="text-[#435233 top-0 text-5xl font-bold text-[#435233]">C porque vivimos...<br>En el&#10084;de Conce.</p>
-        <div class="flex justify-center">
+        <div class="flex justify-center pt-8">
             <button class="px-8 py-3 font-bold text-white transition transform bg-[#435233] rounded-full shadow-lg hover:bg-yellow-400 hover:scale-105">Carta</button>
         </div>
         </div>
@@ -125,7 +133,7 @@
 </div>
 
 <!-- Mapa --> 
-<div class="bg-[#435233]">
+<div id="ubicación"  class="bg-[#435233]">
   <div class="flex flex-col items-center pb-10">
   <div class="text-center py-11">
     <h3 class="text-[#fdfce8] text-5xl font-bold">Te dijimos que estabamos en el&#10084;de Conce?</h3>
@@ -140,7 +148,7 @@
 </div>
 
 <!--Spotify-->
-<div class="spotify w-full h-auto flex flex-col items-center pb-8 md:flex md:justify-start bg-[url('img/background/ladrillos.jpg')] bg-cover bg-center bg-black/65 bg-blend-multiply">
+<div id="playlist" class="spotify w-full h-auto flex flex-col items-center pb-8 md:flex md:justify-start bg-[url('img/background/ladrillos.jpg')] bg-cover bg-center bg-black/65 bg-blend-multiply">
 <div class=" pt-9" id="">
   <svg xmlns="http://www.w3.org/2000/svg" width="300" height="168" viewBox="0 0 559 168" id="spotify--logo">
     <g id="logo--circle">
@@ -211,7 +219,7 @@
 </div>
 
 <!--instagram-->
-<div class="w-full h-[100vh] max-w-xl swiper">
+<div id="contacto" class="w-full h-[100vh] max-w-xl swiper">
   <div class="flex items-center px-8 pt-8 pb-8">
   <h2 class="text-4xl font-bold text-[#435233] ">Siguenos en Instagram!</h2>
   <img class="w-auto h-20 pl-8" src="./img/logo-cafeconc.png" alt="">

@@ -1,3 +1,9 @@
+h1{
+    font-family: "Poppins";
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
 @keyframes scale-to-full {
   0%, 1% {
     transform: scale(0);
